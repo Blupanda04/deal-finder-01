@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealProof — Black Friday 2026, every deal checked</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">✓</span>
+      <div>
+        <h1>DealProof</h1>
+        <p class="tagline">Black Friday 2026 — every price checked today, none invented.</p>
+      </div>
+    </div>
+    <div class="masthead-stats">
+      <div class="stat"><strong id="stat-count">–</strong><span>deals</span></div>
+      <div class="stat stat-click" id="stat-newlow-wrap" role="button" tabindex="0" title="Show new lows only"><strong id="stat-newlow">–</strong><span>new lows</span></div>
+      <div class="stat"><strong id="stat-maxsave">–</strong><span>biggest saving</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="controls" aria-label="Search and filter deals">
+    <div class="search-row">
+      <input id="search" type="search" placeholder="Search a product, brand or store…" autocomplete="off">
+      <button id="filter-toggle" type="button" aria-expanded="false">Filters</button>
+    </div>
+    <div class="filter-row" id="filter-row">
+      <label>Category
+        <select id="filter-category">
+          <option value="">All categories</option>
+        </select>
+      </label>
+      <label>Store
+        <select id="filter-store">
+          <option value="">All stores</option>
+        </select>
+      </label>
+      <label>Discount
+        <select id="filter-discount">
+          <option value="0">Any discount</option>
+          <option value="30">30% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select>
+      </label>
+      <label>Sort by
+        <select id="sort">
+          <option value="discount">Biggest discount</option>
+          <option value="saving">Biggest saving ($)</option>
+          <option value="price-asc">Lowest sale price</option>
+          <option value="price-desc">Highest sale price</option>
+        </select>
+      </label>
+      <button id="filter-newlow" type="button" class="pill-toggle" aria-pressed="false">New lows only</button>
+      <button id="clear-filters" type="button" class="clear-btn" hidden>Clear filters</button>
+    </div>
+    <p class="result-line"><span id="result-count">–</span> <span id="active-filters"></span></p>
+  </section>
+
+  <section id="deals" class="deal-grid" aria-live="polite"></section>
+  <p id="empty" class="empty" hidden>No deals match that search. Try a different word or clear a filter.</p>
+
+  <section class="method">
+    <h2>How every price was checked</h2>
+    <p>Each deal on this page was found and checked on <strong>Friday 27 November 2026</strong> by reading the price at the store or in a deals roundup that names the store. The check time and the source are on every card. A discount is only listed when the sale price and the usual price were both seen — the percentage is computed from those two prices, never copied from a banner.</p>
+    <h3>What the verdict means</h3>
+    <ul class="verdict-key">
+      <li><span class="badge badge-newlow">NEW LOW</span> The lowest price we have seen for this product, below its usual sale range.</li>
+      <li><span class="badge badge-strong">STRONG DEAL</span> A large, genuine cut (40% or more) on a product that rarely goes this low.</li>
+      <li><span class="badge badge-fair">FAIR DEAL</span> A real saving, but the product has sold near this price before.</li>
+      <li><span class="badge badge-routine">ROUTINE SALE</span> A small cut on a product that is often discounted — fine, not a rush.</li>
+    </ul>
+    <p class="fineprint">Prices move fast on Black Friday. The store page is the final word — if a price has changed since we checked, the store's price wins. Links go to the store; we take no cut from them.</p>
+  </section>
+</main>
+
+<footer>
+  <p>DealProof — built for the make.fun Black Friday deal finder bounty. Prices checked 27 November 2026. Not affiliated with any store listed.</p>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
